@@ -3,12 +3,20 @@ package configurations;
 import java.util.Map;
 
 public class ProcedureConfiguration extends DatabaseConfiguration {
-	private String sScenario, sProcedureCall, sUser, sRole;
+	private String sScenario, sProcedureCall, sCaller, sRole;
 
-	private static final String ENV_USER = "USER";
+	private static final String ENV_CALLER = "CALLER";
 	private static final String ENV_ROLE = "ROLE";
 	private static final String ENV_PROCEDURE_CALL = "PROCEDURECALL";
 	private static final String ENV_SCENARIO = "SCENARIO";
+	
+	public String getsCaller() {
+		return sCaller;
+	}
+
+	public void setsCaller(String sCaller) {
+		this.sCaller = sCaller;
+	}
 
 	public String getsScenario() {
 		return sScenario;
@@ -24,14 +32,6 @@ public class ProcedureConfiguration extends DatabaseConfiguration {
 
 	public void setsProcedureCall(String sProcedureCall) {
 		this.sProcedureCall = sProcedureCall;
-	}
-
-	public String getsUser() {
-		return sUser;
-	}
-
-	public void setsUser(String sUser) {
-		this.sUser = sUser;
 	}
 
 	public String getsRole() {
@@ -61,9 +61,9 @@ public class ProcedureConfiguration extends DatabaseConfiguration {
 			setsRole(sRole);
 		}
 
-		final String sUser = env.get(ENV_USER);
-		if (sUser != null) {
-			setsUser(sUser);
+		final String sCaller = env.get(ENV_CALLER);
+		if (sCaller != null) {
+			setsCaller(sCaller);
 		}
 	}
 

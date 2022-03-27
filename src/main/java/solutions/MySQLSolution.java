@@ -17,7 +17,7 @@ public class MySQLSolution extends Solution {
 		if (c instanceof ProcedureConfiguration) {
 			ProcedureConfiguration pc = (ProcedureConfiguration) c;
 			Connection conn = MySQLConnection.getConnection(pc.getsScenario(), pc.getDbusername(), pc.getDbpassword());
-			final String callStatement = String.format("{call %s('%s','%s')}", pc.getsProcedureCall(), pc.getsUser(),
+			final String callStatement = String.format("{call %s('%s','%s')}", pc.getsProcedureCall(), pc.getsCaller(),
 					pc.getsRole());
 			CallableStatement cs;
 			try {
