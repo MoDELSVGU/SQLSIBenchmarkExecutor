@@ -38,7 +38,7 @@ public class MySQLSolution extends Solution {
 		if (c instanceof ProcedureConfiguration) {
 			ProcedureConfiguration pc = (ProcedureConfiguration) c;
 
-			System.out.println(String.format("%s;%s;%s;%s;%s", pc.getsTool(), pc.getsProcedureCall(), pc.getRunIndex(),
+			System.out.println(String.format("%s;%s;%s;%s;%s;%s", pc.getsTool(), pc.getsScenario(), pc.getsProcedureCall(), pc.getRunIndex(),
 					metricExecutionTime, metricValue.toString()));
 
 		}
