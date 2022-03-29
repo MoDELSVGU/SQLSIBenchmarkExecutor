@@ -26,6 +26,7 @@ public class MySQLSolution extends Solution {
 				cs.execute();
 				final long nanosExecutionEnd = System.nanoTime();
 				final double timeInSecs = ((double) nanosExecutionEnd - nanosExecutionStart) / 1_000_000_000;
+
 				printMetric(pc, METRIC_EXECUTION_TIME, timeInSecs);
 
 			} catch (SQLException e) {
@@ -38,8 +39,8 @@ public class MySQLSolution extends Solution {
 		if (c instanceof ProcedureConfiguration) {
 			ProcedureConfiguration pc = (ProcedureConfiguration) c;
 
-			System.out.println(String.format("%s;%s;%s;%s;%s;%s", pc.getsTool(), pc.getsScenario(), pc.getsProcedureCall(), pc.getRunIndex(),
-					metricExecutionTime, metricValue.toString()));
+			System.out.println(String.format("%s;%s;%s;%s;%s;%s", pc.getsTool(), pc.getsScenario(),
+					pc.getsProcedureCall(), pc.getRunIndex(), metricExecutionTime, metricValue.toString()));
 
 		}
 
